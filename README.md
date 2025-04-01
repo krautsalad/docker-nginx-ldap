@@ -27,10 +27,10 @@ services:
 Create a `./config/pam_ldap.conf` file with your LDAP server details:
 
 ```txt
-host ldap.example.com:636
 base ou=users,dc=example,dc=com
 binddn cn=search,dc=example,dc=com
 bindpw VerySecurePassword
+host ldap.example.com:636
 ssl on
 ```
 
@@ -38,7 +38,7 @@ ssl on
 
 Integrate LDAP authentication into your Nginx site with the following example:
 
-```txt
+```nginx
 server {
   server_name server.example.com;
 
