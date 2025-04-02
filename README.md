@@ -50,10 +50,7 @@ server {
     set $auth nginx-auth:8888;
     proxy_set_header X-Ldap-Allowed-Grp cn=server.example.com,ou=groups,dc=example,dc=com;
 
-    internal;
-    proxy_pass http://$auth;
-    proxy_pass_request_body off;
-    proxy_set_header Content-Length "";
+    include custom/defaults_auth.conf;
   }
 }
 ```
